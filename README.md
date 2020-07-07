@@ -1,3 +1,5 @@
+# THIS IS A DUMB FORK OF THE ORIGINAL REPO, YOU PROBABLY DON'T WANT TO USE THIS ONE.
+
 ## <img width=2% src="https://scribbletune.com/images/scribbletune-logo.png"> SCRIBBLETUNE
 
 [![Build Status](https://travis-ci.com/scribbletune/scribbletune.svg?branch=master)](http://travis-ci.com/scribbletune/scribbletune)
