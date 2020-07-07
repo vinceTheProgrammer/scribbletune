@@ -1,24 +1,39 @@
 {
-  "name": "scribbletune",
-  "version": "3.9.0",
-  "description": "Create music with JavaScript and Node.js!",
-  "main": "./index.js",
-  "types": "index.d.ts",
-  "scripts": {
-    "doc": "npx typedoc --out docs src/ src/typings.d.ts",
-    "doc:json": "npx typedoc --json typedoc-out.json src",
-    "test": "jest --coverage",
-    "build:node": "npx webpack",
-    "build:browser": "TARGET=browser npx webpack",
-    "build": "npm t && npm run build:node && npm run build:browser",
-    "watch:browser": "TARGET=browser npx webpack --watch",
-    "watch:node": "npx webpack --watch",
-    "rebuild": "rm -rf node_modules; rm package-lock.json; npm i; npm run build"
+  "_from": "git+https://github.com/vinceTheProgrammer/scribbletunemodthing.git",
+  "_id": "scribbletune@3.8.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/scribbletune",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/vinceTheProgrammer/scribbletunemodthing",
+    "rawSpec": "https://github.com/vinceTheProgrammer/scribbletunemodthing",
+    "saveSpec": "git+https://github.com/vinceTheProgrammer/scribbletunemodthing.git",
+    "fetchSpec": "https://github.com/vinceTheProgrammer/scribbletunemodthing.git",
+    "gitCommittish": null
   },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/vinceTheProgrammer/scribbletunemodthing.git#4870064cf872752c9ea5aea933b6b6d2ad3b5d5c",
+  "_shasum": "e0a8432a191c694f1d0ac5a296f82141588439a9",
+  "_spec": "https://github.com/vinceTheProgrammer/scribbletunemodthing",
+  "_where": "M:\\VinceStuff\\Desktop\\RandSongBotto",
+  "author": {
+    "name": "Walmik Deshpande"
+  },
+  "bugs": {
+    "url": "https://github.com/scribbletune/scribbletune/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
     "jsmidgen": "~0.1.5",
     "tonal": "^2.2.2"
   },
+  "deprecated": false,
+  "description": "Create music with JavaScript and Node.js!",
   "devDependencies": {
     "@types/jest": "^24.0.24",
     "@types/node": "^12.12.21",
@@ -36,10 +51,10 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.10"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/scribbletune/scribbletune.git"
+  "engines": {
+    "node": ">8.x.x"
   },
+  "homepage": "https://github.com/scribbletune/scribbletune#readme",
   "keywords": [
     "javascript",
     "music",
@@ -50,15 +65,27 @@
     "tone.js",
     "tonal"
   ],
-  "author": "Walmik Deshpande",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/scribbletune/scribbletune/issues"
-  },
-  "engines": {
-    "node": ">8.x.x"
-  },
+  "main": "./index.js",
+  "name": "scribbletune",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/scribbletune/scribbletune.git"
+  },
+  "scripts": {
+    "build": "npm t && npm run build:node && npm run build:browser",
+    "build:browser": "TARGET=browser npx webpack",
+    "build:node": "npx webpack",
+    "doc": "npx typedoc --out docs src/ src/typings.d.ts",
+    "doc:json": "npx typedoc --json typedoc-out.json src",
+    "rebuild": "rm -rf node_modules; rm package-lock.json; npm i; npm run build",
+    "test": "jest --coverage",
+    "watch:browser": "TARGET=browser npx webpack --watch",
+    "watch:node": "npx webpack --watch"
+  },
+  "types": "index.d.ts",
+  "version": "3.8.0"
 }

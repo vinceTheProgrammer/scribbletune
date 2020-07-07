@@ -151,27 +151,8 @@ module.exports = (params: ClipParams) => {
 
   let effects = [];
 
-  function createEffect(eff: any) {
-    if (typeof eff === 'string') {
-      return new Tone[eff]();
-    } else {
-      return eff;
-    }
-  }
-
-  function startEffect(eff: any) {
-    if (typeof eff.start === 'function') {
-      return eff.start();
-    } else {
-      return eff;
-    }
-  }
-
   if (params.effects) {
-    if (!Array.isArray(params.effects)) {
-      params.effects = [params.effects];
-    }
-    effects = params.effects.map(createEffect).map(startEffect);
+    effects = params.effects.map((eff: any) => new Tone[eff]());
   }
 
   if (params.sample || params.buffer) {
@@ -183,18 +164,9 @@ module.exports = (params: ClipParams) => {
     params.sampler = new Tone.Sampler(params.samples);
   }
 
-  if (params.synth && !params.instrument) {
+  if (params.synth) {
     // This implies, the synth is probably being hand created by the user with an available Tone synth
-    console.warn(
-      'The "synth" parameter will be deprecated in the future. Please use the "instrument" parameter instead.'
-    );
     params.instrument = new Tone[params.synth]();
-  }
-
-  if (params.instrument) {
-    if (typeof params.instrument === 'string') {
-      params.instrument = new Tone[params.instrument]();
-    }
   }
 
   if (params.player) {
@@ -240,7 +212,7 @@ module.exports = (params: ClipParams) => {
     // This implies, the instrument was already created (either by user or by Scribbletune during channel creation)
     // Unlike player, the instrument needs the entire params object to construct a sequence
     return new Tone.Sequence(
-      params.instrument instanceof Tone.PolySynth
+      params.instrument.voices
         ? getInstrSeqFn(params)
         : getMonoInstrSeqFn(params),
       expandStr(params.pattern),
